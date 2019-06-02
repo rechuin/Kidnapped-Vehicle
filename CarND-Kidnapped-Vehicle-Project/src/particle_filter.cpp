@@ -93,7 +93,7 @@ void ParticleFilter::prediction(double delta_t, double std_pos[],
     
     // prediction step: need to calculate each x,y based on yaw angle theta whether equal to 0
     // refer to lessons 6-8&9
-    if(fabs(particles[i].theta) < 0.0001)
+    if(fabs(yaw_rate) < 0.0001)
     {
       pred_x = particles[i].x + velocity*cos(particles[i].theta)*delta_t;
       pred_y = particles[i].y + velocity*sin(particles[i].theta)*delta_t;
